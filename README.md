@@ -26,7 +26,7 @@ This should also install *oauthlib*, *requests*, and *six* automatically.
 
 ## Scripts
 
-### config-example.py
+### config_example.py
 
 Copy this script to *config.py* and add your tokens/keys here-- hopefully this
 helps (me and you) avoid the posting of tokens/keys to public repositories.
