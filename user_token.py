@@ -37,22 +37,28 @@ print('\n===\n'
       '==='.format(uagent, utoken))
 
 # Following the example here:
-# https://github.com/discogs/discogs_client#user-token-authentication
+#
+#    https://github.com/discogs/discogs_client#user-token-authentication
+#
 d = dc.Client(uagent, user_token=utoken)
 
-me = d .identity()
+me = d.identity()
 print('\n* Identity')
 print('I\'m {0} ({1}) from {2}.'.format(me.name, me.username, me.location))
 print('My wantlist has {} items.'.format(len(me.wantlist)))
 
-print('\n* fetching data')
+print('\n* Fetching data')
 results = d.search('Stockholm By Night', type='release')
 print('results.pages:', results.pages)
 artist = results[0].artists[0]
-print('artisti.name:', artist.name)
+print('artist.name:', artist.name)
 
-print('\n* fetching data; extra -- look at the first 10 releases:')
-for n in range(10):
-    print('** {} -- {}'.format(n, results[n]))
-    print('  artists:', ', '.join([a.name for a in results[n].artists]))
-    print('  genres:', ', '.join(results[n].genres))
+print('\n* Artist ID')
+artist_id = artist.id
+print('artist.id: {}'.format(artist_id))
+print('d.artist({}): {}'.format(artist_id, d.artist(artist_id)))
+
+print('\n* Drill down')
+releases = d.search('Bit Shifter', type='artist')[0].releases[1].\
+    versions[0].labels[0].releases
+print('len(releases): {}'.format(len(releases)))
