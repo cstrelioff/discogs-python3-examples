@@ -67,8 +67,8 @@ print('\n===\n'
 # write tokens to file
 with open('access_tokens.py', 'w') as f:
     f.write('# oauth token and secret\n')
-    f.write('access_token={}\n'.format(access_token))
-    f.write('access_secret={}'.format(access_secret))
+    f.write('access_token=\'{}\'\n'.format(access_token))
+    f.write('access_secret=\'{}\''.format(access_secret))
 
 # Again, following the example here (sanme as user_token.py):
 #
