@@ -20,13 +20,12 @@ try:
 except:
     raise Exception('Could not import config.py -- please create this file!')
 
-try:
-    # try to access the user token
-    utoken = config.user_token
-except:
+# try to access the user token
+utoken = config.user_token
+if utoken == 'your-user-token-here':
     raise Exception('Please set variaible user_token in config.py!\n'
-                    '--obtain token at: \n'
-                    '  https://www.discogs.com/settings/developers')
+                    '--obtain token at:'
+                    ' https://www.discogs.com/settings/developers')
 
 uagent = ('UserTokenExample/0.1 '
          '+https://github.com/cstrelioff/discogs-python3-examples')
