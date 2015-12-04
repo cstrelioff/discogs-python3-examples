@@ -36,6 +36,13 @@ helps (me and you) avoid the posting of tokens/keys to public repositories.
 If you only want to access *your own data* on discogs, you can get a user token
 and authenticate as shown in this script.
 
-### consumer_token.py
+### consumer_key.py
 
-Soon...
+This script uses the OOB flow for OAuth authentication-- a url will be obtained
+that allows the user to validate the script/app for access to account
+information.  The file *access_tokens.py* is written for future use of the
+approved script/app using the tokens obtained from discogs.
+
+### previously_approved.py
+
+Coming...
