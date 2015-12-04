@@ -22,7 +22,13 @@ Python 3 and installing the discogs-client using pip:
 $ pip install discogs-client
 ```
 
-This should also install *oauthlib*, *requests*, and *six* automatically.
+This should also install *oauthlib*, *requests*, and *six* automatically. If 
+you want to install the exact package versions used when I developed these
+scripts, I've included a *requirements.txt* file. To use this, install with:
+
+```bash
+$ pip install -r requirements.txt
+```
 
 ## Scripts
 

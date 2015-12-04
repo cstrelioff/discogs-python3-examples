@@ -1,0 +1,4 @@
+discogs-client==2.2.1
+oauthlib==1.0.3
+requests==2.8.1
+six==1.10.0
