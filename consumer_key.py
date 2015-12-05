@@ -20,15 +20,18 @@ try:
 except:
     raise Exception('Could not import config.py -- please create this file!')
 
-try:
-    # try to access the consumer key and secret
-    ckey = config.consumer_key
-    csecret = config.consumer_secret
-except:
+
+# try to access the consumer key and secret
+ckey = config.consumer_key
+csecret = config.consumer_secret
+default_ckey = (ckey == 'your-consumer-key-here')
+default_csecret = (csecret == 'your-consumer-secret-here')
+
+if default_ckey and default_csecret:
     raise Exception('Please set variables consumer_key and '
                     'consumer_secret in config.py!\n'
-                    '--obtain consumer key and secret at: \n'
-                    '  https://www.discogs.com/settings/developers')
+                    '--obtain consumer key and secret at:'
+                    ' https://www.discogs.com/settings/developers')
 
 uagent = ('ConsumerKeyExample/0.1 '
          '+https://github.com/cstrelioff/discogs-python3-examples')
